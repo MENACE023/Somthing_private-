@@ -1,0 +1,405 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb
+    );
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    animation:floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card{
+
+    width:100%;
+    max-width:550px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,0.20);
+
+    backdrop-filter:
+    blur(18px);
+
+    border:
+    1px solid rgba(
+        255,
+        255,
+        255,
+        0.35
+    );
+
+    box-shadow:
+    0 20px 50px rgba(
+        0,
+        0,
+        0,
+        0.15
+    );
+
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   GIF
+========================= */
+
+.hero{
+    margin-bottom:20px;
+}
+
+#heroGif{
+
+    width:220px;
+
+    max-width:100%;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(
+        0,
+        0,
+        0,
+        0.15
+    );
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+
+    font-size:3rem;
+
+    color:#ff2d6f;
+
+    margin-bottom:10px;
+}
+
+.question{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:#333;
+
+    margin-bottom:10px;
+}
+
+.subText{
+
+    font-size:1.1rem;
+
+    color:#555;
+
+    margin-bottom:20px;
+}
+
+#message{
+
+    min-height:45px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#ff2d6f;
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   POPUP MESSAGE
+========================= */
+
+.popupText{
+    animation:popupBounce .8s ease;
+}
+
+@keyframes popupBounce{
+
+    0%{
+        opacity:0;
+        transform:
+        translateY(35px)
+        scale(.5);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+        translateY(-10px)
+        scale(1.15);
+    }
+
+    75%{
+        transform:
+        translateY(5px)
+        scale(.95);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttonArea{
+
+    position:relative;
+
+    height:220px;
+
+    margin-top:20px;
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px 34px;
+
+    border-radius:16px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+#yesBtn{
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff4d6d,
+        #ff758f
+    );
+
+    color:white;
+
+    box-shadow:
+    0 10px 25px rgba(
+        255,
+        77,
+        109,
+        .45
+    );
+
+    position:absolute;
+
+    left:50%;
+
+    top:20px;
+
+    transform:
+    translateX(-50%);
+}
+
+#yesBtn:hover{
+
+    transform:
+    translateX(-50%)
+    scale(1.08);
+}
+
+#noBtn{
+
+    background:#ececec;
+
+    color:#555;
+
+    position:absolute;
+
+    left:50%;
+
+    top:100px;
+
+    transform:
+    translateX(-50%);
+}
+
+/* =========================
+   RESULT
+========================= */
+
+#result{
+    display:none;
+}
+
+.resultTitle{
+
+    color:#ff2d6f;
+
+    margin-bottom:15px;
+}
+
+.resultText{
+
+    color:#555;
+
+    margin-bottom:15px;
+}
+
+#gifPlayer{
+
+    width:100%;
+
+    border-radius:20px;
+
+    margin-top:10px;
+}
+
+.loveText{
+
+    margin-top:15px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ff2d6f;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+canvas{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .card{
+        padding:25px;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .question{
+        font-size:1.3rem;
+    }
+
+    #heroGif{
+        width:180px;
+    }
+
+    button{
+        font-size:16px;
+        padding:14px 28px;
+    }
+
+}
+
+
+button{
+    touch-action:manipulation;
+}
